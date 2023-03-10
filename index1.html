@@ -34,9 +34,29 @@
             <input type="button" value="00" onclick="Solve('00')">
             <input type="button" value="0" onclick="Solve('0')">
             <input type="button" value="." onclick="Solve('.')">
-            <input type="button" value="=" onclick="Result('=')">
+            <input type="button" value="=" onclick="Result()">
             <br>
         </div>
     </div>
+    <script>
+       const Solve=val =>{
+        const v=document.getElementById('ans');
+        v.value+=val;
+       }
+       const Result =() => {
+        const v1=document.getElementById('ans').value;
+        const v2=eval(v1);
+        document.getElementById('ans').value=v2;
+        
+       }
+       const Clear =() =>{
+        const input=document.getElementById('ans');
+        input.value='';
+       }
+       const Back =() =>{
+        const back=document.getElementById('ans');
+        back.value.slice(0,-1);
+       }
+    </script>
 </body>
 </html>
